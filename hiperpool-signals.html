@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Hiring Signals — Hiperpool</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f9f9f7;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 0 24px 80px;
+    }
+
+    .header {
+      margin-bottom: 48px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    /* What I Do */
+    .intro {
+      margin-bottom: 52px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .intro p strong {
+      color: #1a1a1a;
+    }
+
+    /* Signals table */
+    .signals {
+      margin-bottom: 52px;
+    }
+
+    .signal-row {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid #ebebeb;
+      align-items: flex-start;
+    }
+
+    .signal-row:first-child {
+      border-top: 1px solid #ebebeb;
+    }
+
+    .signal-trigger {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      min-width: 200px;
+      flex-shrink: 0;
+    }
+
+    .signal-meaning {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Examples */
+    .examples {
+      margin-bottom: 52px;
+    }
+
+    .example-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .example-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .example-company {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .example-tag {
+      font-size: 11px;
+      font-weight: 600;
+      background: #f0f0ed;
+      color: #666;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .example-tag.today {
+      background: #eef6ee;
+      color: #2d7a2d;
+    }
+
+    .signal-pill {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+      background: #f5f5f2;
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+
+    .example-why {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+
+    .decision-makers {
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px;
+    }
+
+    .dm-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 8px;
+    }
+
+    .dm-person {
+      font-size: 13px;
+      color: #555;
+      padding: 3px 0;
+    }
+
+    .dm-person strong {
+      color: #1a1a1a;
+    }
+
+    .source-link {
+      font-size: 11px;
+      color: #bbb;
+      text-decoration: none;
+      margin-left: 8px;
+    }
+
+    .source-link:hover {
+      color: #888;
+    }
+
+    /* Scale section */
+    .scale {
+      margin-bottom: 52px;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 10px;
+      padding: 32px;
+    }
+
+    .scale .section-label {
+      color: #666;
+    }
+
+    .scale p {
+      font-size: 15px;
+      color: #ccc;
+      margin-bottom: 10px;
+      line-height: 1.65;
+    }
+
+    .scale p strong {
+      color: #fff;
+    }
+
+    .scale p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+    }
+
+    .cta p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      transition: background 0.15s;
+    }
+
+    .cta-button:hover {
+      background: #333;
+    }
+
+    .cta-footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #ebebeb;
+      margin: 0 0 52px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>Live Hiring Signals — UK & Europe</h1>
+      <p>Prepared for Hiperpool &nbsp;·&nbsp; April 2026</p>
+    </div>
+
+    <!-- What I Do -->
+    <div class="intro">
+      <div class="section-label">What I Do</div>
+      <p>I track real-time signals that show when a company is about to hire strategy or transformation talent — <strong>before they go to market.</strong></p>
+      <p>When the signal fires, I reach out, qualify the opportunity, and connect the company directly to the right recruitment partner.</p>
+      <p>You show up to a conversation with a hiring decision-maker who has an active mandate. <strong>Right now.</strong></p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Signals -->
+    <div class="signals">
+      <div class="section-label">Signals I Track</div>
+
+      <div class="signal-row">
+        <div class="signal-trigger">New CEO / CSO appointed</div>
+        <div class="signal-meaning">Rebuilds strategy team within 3–9 months</div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-trigger">PE acquisition</div>
+        <div class="signal-meaning">Portfolio company needs Head of Strategy or Transformation Lead</div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-trigger">Series B / C closed</div>
+        <div class="signal-meaning">Scaling → hires Chief of Staff, Strategy Manager, Head of Biz Ops</div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-trigger">New function created</div>
+        <div class="signal-meaning">Team needs to be built below the new leader</div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-trigger">Geographic expansion</div>
+        <div class="signal-meaning">Needs strategic leadership to run the new market</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Examples -->
+    <div class="examples">
+      <div class="section-label">Live Examples — Found This Week</div>
+
+      <!-- Jolt Capital -->
+      <div class="example-card">
+        <div class="example-header">
+          <div class="example-company">Jolt Capital — London</div>
+          <div class="example-tag today">Today</div>
+        </div>
+        <div class="signal-pill">PE &nbsp;·&nbsp; New Value Creation Partner hired</div>
+        <p class="example-why">
+          Jolt Capital, a European deeptech PE firm, just hired João Rodrigues as Value Creation Partner based in London. His mandate: work with portfolio companies across Europe to restructure operations and drive growth.
+          <br><br>
+          When a PE firm brings in a Value Creation Partner, portfolio companies follow with strategy and transformation hires within 3–6 months. This is a mandate pipeline, not a single hire.
+          <a href="https://www.boursorama.com/bourse/actualites/jolt-capital-recrute-joao-rodrigues-comme-value-creation-partner-b3bac2c24415cbaf22532f93db1072d0" target="_blank" class="source-link">source →</a>
+        </p>
+        <div class="decision-makers">
+          <div class="dm-label">Decision-maker</div>
+          <div class="dm-person"><strong>João Rodrigues</strong> — Value Creation Partner, Jolt Capital</div>
+        </div>
+      </div>
+
+      <!-- Focus Group -->
+      <div class="example-card">
+        <div class="example-header">
+          <div class="example-company">Focus Group — UK</div>
+          <div class="example-tag">Building now</div>
+        </div>
+        <div class="signal-pill">Corporate &nbsp;·&nbsp; New strategy function created</div>
+        <p class="example-why">
+          One of the UK's leading business technology providers (1,000–5,000 employees) appointed Jon Daveney as Chief Strategy and Transformation Officer — hired directly from Hg Capital. This is a newly created role. He is building the function from scratch.
+          <br><br>
+          A new CSTO from PE always builds a team below him. Corporate Strategy Manager, Transformation Lead, PMO Director — these roles open within 3–6 months. The window to get in before the market is now.
+          <a href="https://focusgroup.co.uk/company/news/jon-daveney-chief-strategy-and-transformation-officer/" target="_blank" class="source-link">source →</a>
+        </p>
+        <div class="decision-makers">
+          <div class="dm-label">Decision-makers</div>
+          <div class="dm-person"><strong>Jon Daveney</strong> — Chief Strategy & Transformation Officer</div>
+          <div class="dm-person"><strong>Tabitha Logan</strong> — Head of People Operations</div>
+          <div class="dm-person"><strong>Matt Halford</strong> — COO</div>
+        </div>
+      </div>
+
+      <!-- Encord -->
+      <div class="example-card">
+        <div class="example-header">
+          <div class="example-company">Encord — London</div>
+          <div class="example-tag">Feb 2026</div>
+        </div>
+        <div class="signal-pill">Startup &nbsp;·&nbsp; €50M Series C + US expansion</div>
+        <p class="example-why">
+          London-based AI startup, founded by ex-consultants, closed a €50M Series C (total raised: €93M). Scaling rapidly across Europe and opening first US office.
+          <br><br>
+          Post-Series C with international expansion means they need to build the strategy and operations layer fast. Head of Strategy, Business Operations Manager, Strategy Manager — all likely near-term hires.
+          <a href="https://thenextweb.com/news/encord-raises-e50m-to-build-the-data-layer-for-physical-ai" target="_blank" class="source-link">source →</a>
+        </p>
+        <div class="decision-makers">
+          <div class="dm-label">Decision-maker</div>
+          <div class="dm-person"><strong>Eric Landau</strong> — Co-Founder & CEO, Encord</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scale -->
+    <div class="scale">
+      <div class="section-label">What This Looks Like at Scale</div>
+      <p>These 3 examples took <strong>under 10 minutes</strong> to surface.</p>
+      <p>Running this full-time — across your ICP across UK and Europe — I surface <strong>5–8 qualified signals per month.</strong> Each one is a company with a live trigger, ready for outreach.</p>
+      <p>You don't wait for referrals. You don't compete with 10 other recruiters on job boards.<br>You get a conversation with a hiring manager who already has the problem you solve.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <p>Happy to walk through how this works specifically for Hiperpool's market.</p>
+      <a href="https://cal.com/leonidshvorob/fit-check-call" class="cta-button" target="_blank">Book 15 min call</a>
+      <div class="cta-footer">Leonid Shvorob &nbsp;·&nbsp; System Hustle &nbsp;·&nbsp; leo@systemhustle.com</div>
+    </div>
+
+  </div>
+</body>
+</html>
