@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drug Discovery Signals — Jamie Riley</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f9f9f7;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 0 24px 80px;
+    }
+
+    .header {
+      margin-bottom: 48px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .examples {
+      margin-bottom: 52px;
+    }
+
+    .example-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .example-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .example-company {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .example-tag {
+      font-size: 11px;
+      font-weight: 600;
+      background: #f0f0ed;
+      color: #666;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .example-tag.hot {
+      background: #eef6ee;
+      color: #2d7a2d;
+    }
+
+    .example-tag.warm {
+      background: #fef6e7;
+      color: #9a6500;
+    }
+
+    .signal-pill {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+      background: #f5f5f2;
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+
+    .example-why {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+
+    .source-link {
+      font-size: 11px;
+      color: #bbb;
+      text-decoration: none;
+      margin-left: 6px;
+    }
+
+    .source-link:hover { color: #888; }
+
+    .decision-makers {
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px;
+    }
+
+    .dm-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 8px;
+    }
+
+    .dm-person {
+      font-size: 13px;
+      color: #555;
+      padding: 3px 0;
+    }
+
+    .dm-person strong {
+      color: #1a1a1a;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #ebebeb;
+      margin: 0 0 52px;
+    }
+
+    /* Next level section */
+    .next-level {
+      margin-bottom: 52px;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 10px;
+      padding: 32px;
+    }
+
+    .next-level .section-label { color: #555; }
+
+    .next-level p {
+      font-size: 15px;
+      color: #ccc;
+      margin-bottom: 10px;
+      line-height: 1.65;
+    }
+
+    .next-level p strong { color: #fff; }
+    .next-level p:last-child { margin-bottom: 0; }
+
+    .next-level ul {
+      margin: 16px 0 16px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .next-level ul li {
+      font-size: 14px;
+      color: #aaa;
+      padding: 5px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .next-level ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #555;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+    }
+
+    .cta p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    .cta-button:hover { background: #333; }
+
+    .cta-footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1>3 Live Signals — Early Stage & Discovery</h1>
+      <p>Pulled this week &nbsp;·&nbsp; US &nbsp;·&nbsp; April 2026</p>
+    </div>
+
+    <div class="examples">
+      <div class="section-label">Signals</div>
+
+      <!-- Fathom -->
+      <div class="example-card">
+        <div class="example-header">
+          <div class="example-company">Fathom Therapeutics — New York</div>
+          <div class="example-tag hot">Yesterday</div>
+        </div>
+        <div class="signal-pill">$47M Series A &nbsp;·&nbsp; Drug Discovery expanding</div>
+        <p class="example-why">
+          Raised $47M Series A led by Sutter Hill Ventures. Using quantum chemistry and AI to design small molecule drugs. Actively expanding internal discovery programs across high-impact diseases. Just brought on a new Chief Business Officer and built out a Scientific Advisory Board — both signals of team scaling.
+          <br><br>
+          Principal Scientists, Discovery Biology leads, Computational Scientists — these roles are opening now, before they hit the market.
+          <a href="https://www.prnewswire.com/news-releases/fathom-therapeutics-formerly-atommap-raises-47-million-in-oversubscribed-series-a-financing-to-translate-physics-and-ai-enabled-small-molecule-design-into-next-generation-medicines-302754272.html" target="_blank" class="source-link">source →</a>
+        </p>
+        <div class="decision-makers">
+          <div class="dm-label">Decision-maker</div>
+          <div class="dm-person"><strong>Huafeng Xu, PhD</strong> — CEO, Fathom Therapeutics</div>
+        </div>
+      </div>
+
+      <!-- Novartis -->
+      <div class="example-card">
+        <div class="example-header">
+          <div class="example-company">Novartis — San Diego, CA</div>
+          <div class="example-tag warm">Feb 2026</div>
+        </div>
+        <div class="signal-pill">New Research Center &nbsp;·&nbsp; ~1,000 scientists &nbsp;·&nbsp; $23B US investment</div>
+        <p class="example-why">
+          Novartis broke ground on a new global Biomedical Research Center in San Diego — 466,000 sq ft, end-to-end drug discovery capabilities, AI-enabled. Hiring will ramp up significantly as the facility builds out across oncology, immunology, and cardiometabolic disease areas.
+          <br><br>
+          Already in your client network. This is a warm account with a large, sustained hiring signal — discovery scientists, pharmacologists, preclinical researchers.
+          <a href="https://www.globenewswire.com/news-release/2026/02/06/3234004/0/en/novartis-breaks-ground-on-new-global-biomedical-research-center-in-san-diego-to-accelerate-drug-discovery.html" target="_blank" class="source-link">source →</a>
+        </p>
+        <div class="decision-makers">
+          <div class="dm-label">Decision-maker</div>
+          <div class="dm-person"><strong>Jennie Hang</strong> — Sr. Talent Acquisition Business Partner, Novartis San Diego</div>
+        </div>
+      </div>
+
+      <!-- Orionis -->
+      <div class="example-card">
+        <div class="example-header">
+          <div class="example-company">Orionis Biosciences — Boston, MA</div>
+          <div class="example-tag hot">April 2026</div>
+        </div>
+        <div class="signal-pill">New CSO appointed &nbsp;·&nbsp; Pipeline expanding &nbsp;·&nbsp; Multi-modality</div>
+        <p class="example-why">
+          Clinical-stage biotech focused on cancer and immune disorders. Just appointed Dr. Giulio Draetta as Chief Strategy Officer amid strong pipeline growth — molecular glues, conditionally active cytokines, immune cell engagers across multiple programs.
+          <br><br>
+          New CSO + active pipeline expansion = discovery and preclinical team scaling. Pharmacologists, immunologists, oncology scientists across multiple modalities.
+          <a href="https://orionisbio.com/2026/04/cso-appointment/" target="_blank" class="source-link">source →</a>
+        </p>
+        <div class="decision-makers">
+          <div class="dm-label">Decision-maker</div>
+          <div class="dm-person"><strong>Dr. Giulio Draetta</strong> — Chief Strategy Officer, Orionis Biosciences</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Next level -->
+    <div class="next-level">
+      <div class="section-label">Want more?</div>
+      <p>If you want access to signals in your niche <strong>as soon as they appear</strong> — before your competition does — and on top of that have the decision-makers <strong>pre-qualified</strong> so you only get intros where they've already confirmed they're open to working with a recruiter, that's a different conversation.</p>
+      <p>If that ever becomes relevant — there's a button below.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <a href="https://cal.com/leonidshvorob/fit-check-call" class="cta-button" target="_blank">Book 20 min call</a>
+      <div class="cta-footer">Leonid Shvorob &nbsp;·&nbsp; System Hustle &nbsp;·&nbsp; leo@systemhustle.com</div>
+    </div>
+
+  </div>
+</body>
+</html>
